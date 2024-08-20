@@ -1,0 +1,21 @@
+services:
+  app:
+    container_name: app_backend
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: development
+      args:
+        - PORT=${PORT}
+    ports:
+      - "${PORT}:${PORT}"
+    env_file:
+      - .env.development
+    volumes:
+      - .:/app
+      - node_modules:/app/node_modules
+
+volumes:
+  node_modules:
+

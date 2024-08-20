@@ -9,6 +9,7 @@ async function bootstrap() {
   const PORT = configService.get('port');
 
   await app.listen(PORT);
+  console.log(`Sever http://localhost:${PORT}`);
 
 }
 bootstrap();
