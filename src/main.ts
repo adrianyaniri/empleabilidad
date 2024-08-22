@@ -10,6 +10,7 @@ async function bootstrap() {
 
   await app.listen(PORT);
   console.log(`Sever http://localhost:${PORT}`);
+  console.log(`Ambiente de trabajo: ${configService.get('environment')}`);
 
 }
 bootstrap();
