@@ -1,0 +1,6 @@
+{
+    "*.{js,ts}": [
+      "jest --findRelatedTests --passWithNoTests",
+      "yarn lint"
+    ]
+}
