@@ -34,7 +34,7 @@ COPY src /$DIR/src
 
 EXPOSE $PORT
 
-CMD ["yarn", "start:dev"]
+CMD ["yarn","run", "start:dev"]
 
 FROM base AS production
 

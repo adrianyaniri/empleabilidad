@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-      target: production
+      target: development
       args:
         - PORT=${PORT}
     image: app_emp:${IMAGE_TAG}

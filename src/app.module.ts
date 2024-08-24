@@ -9,6 +9,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { envSchema } from './config/envSchema';
 import dbConfig from './config/dbConfig';
 
+
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -19,6 +20,7 @@ import dbConfig from './config/dbConfig';
       expandVariables: true,
     }),
     TypeOrmModule.forRootAsync({
+      imports: undefined,
       inject: [ConfigService],
       useFactory: dbConfig
     }),

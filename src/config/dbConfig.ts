@@ -9,6 +9,8 @@ export default (configService: ConfigService): DataSourceOptions => ({
   password: configService.get('database.password'),
   database: configService.get('database.database'),
   entities: [__dirname + '/../**/*.entity{.ts,.js}'],
-  synchronize: configService.get('environment') == 'development',
+  migrations: [__dirname + '/../database/migrations/*{.ts,.js}'],
+  synchronize: configService.get('database.synchronize') == 'true',
   logging: configService.get('database.dbLog') == 'true',
 });
+
