@@ -12,7 +12,7 @@ RUN apk update && apk add --no-cache dumb-init
 COPY package*.json $DIR
 COPY yarn.lock $DIR
 
-RUN yarn install
+RUN yarn install --frozen-lockfile
 
 COPY tsconfig*.json $DIR
 COPY src /$DIR/src
@@ -27,14 +27,14 @@ ENV NODE_ENV=development
 COPY package*.json $DIR
 COPY yarn.lock $DIR
 
-RUN yarn install
+RUN yarn install --frozen-lockfile
 
 COPY tsconfig*.json $DIR
 COPY src /$DIR/src
 
 EXPOSE $PORT
 
-CMD ["yarn","run", "start:dev"]
+CMD ["yarn", "start:dev"]
 
 FROM base AS production
 

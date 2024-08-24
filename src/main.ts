@@ -9,8 +9,6 @@ async function bootstrap() {
   const PORT = configService.get('port');
 
   await app.listen(PORT);
-  console.log(`Sever http://localhost:${PORT}`);
-  console.log(`Ambiente de trabajo: ${configService.get('environment')}`);
-
+  console.log(`Server running on http://localhost:${PORT}`);
 }
 bootstrap();

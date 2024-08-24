@@ -8,7 +8,7 @@ export default [
     languageOptions: {
       parser: tsParser,
       parserOptions: {
-        project: './tsconfig.json', // Ajusta esto según tu configuración de TypeScript
+        project: './tsconfig.json',
       },
     },
     plugins: {
@@ -16,7 +16,7 @@ export default [
     },
     rules: {
       ...tsPlugin.configs.recommended.rules,
-      // Aquí puedes agregar tus reglas personalizadas
+
     },
   },
 ];
